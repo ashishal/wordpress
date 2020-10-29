@@ -105,31 +105,34 @@
                         <div class="m-t-20">
                             <div class="tabset">
                               <!-- Tab 1 -->
-                                <input type="radio" name="tabset" id="tab1" >
-                              <label for="tab1">450 L</label>
-                              <!-- Tab 2 -->
-                              <input type="radio" name="tabset" id="tab2" >
-                              <label for="tab2">500 L</label>
-                              <!-- Tab 3 -->
-                              <input type="radio" name="tabset" id="tab3">
-                              <label for="tab3">1000 L</label>
+                              
+                              <?php 
+                                    if( have_rows('our_products') ): while ( have_rows('our_products') ) : the_row();   
+                                        if( have_rows('capacity') ): while ( have_rows('capacity') ) : the_row();  
+                                        ?>
+                                <input type="radio" name="tabset" id="tab<?php echo get_sub_field('litres');?>" >
+                                <label for="tab<?php echo get_sub_field('litres');?>"><?php echo get_sub_field('litres');?> L</label> 
+                                <?php 
+                                        endwhile; endif;
+
+                                    endwhile; endif;    ?>
+                             
                               
                               <div class="tab-panels">
-                                <section id="marzen" class="tab-panel">
-                                  <h3>450 L ENTATTI WATER TANK</h3>
-                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
-                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
+                              <?php 
+                                    if( have_rows('our_products') ): while ( have_rows('our_products') ) : the_row();   
+                                        if( have_rows('capacity') ): while ( have_rows('capacity') ) : the_row();  
+                                        ?>
+                                <section id="<?php echo get_sub_field('litres');?>" class="tab-panel">
+                                  <h3><?php echo get_sub_field('product_description'); ?></h3>
+                                  <a href="<?php echo get_sub_field('link_1');?>"><button class="read-more m-r-20"><?php echo get_sub_field('link_text_1'); ?></button></a>
+                                  <a href="<?php echo get_sub_field('link_2');?>"><button class="read-more2"><?php echo get_sub_field('link_text_2'); ?></button></a>
                                 </section>
-                                <section id="rauchbier" class="tab-panel">
-                                  <h3>500 L ENTATTI WATER TANK</h3>
-                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
-                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
-                                </section>
-                                <section id="dunkles" class="tab-panel">
-                                  <h3>1000 L ENTATTI WATER TANK</h3>
-                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
-                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
-                                </section>
+                                <?php 
+                                        endwhile; endif;
+
+                                    endwhile; endif;    ?>
+                                
                               </div>
                             </div>
                         </div>
