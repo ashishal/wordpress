@@ -92,77 +92,67 @@
     </section>
     <!-- ABOUT END -->
 
-    <!-- OUR PRODUCTS -->
-    <?php $products=get_field('our_products'); ?>
     <section class="m-b-100">
+    <?php $products=get_field('our_products');?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="about-sec-content">
                         <h5>Our Products</h5>
-                        <h2 style="text-transform: uppercase;"><?php echo $products['title']; ?></h2>
-                        <p><?php echo $products['main_description']; ?> </p>
-                        
+                        <h2 style="text-transform: uppercase;">Capacities We Offer</h2>
+                        <p>Our unique specifications like zero maintenance, easy cleaning and rust-free nature make us a highly competitive dealer of Stainless Steel Water Tanks. Our Products are available in 450L, 500L and 1000L. </p>
+                        <!-- tab -->
                         <div class="m-t-20">
                             <div class="tabset">
-                                <input type="radio" name="tabset" id="tab" checked >
-                                <?php 
-                                    if( have_rows('our_products') ): while ( have_rows('our_products') ) : the_row();  ?>
-                                            
-                                    <?php 
-                                        if( have_rows('capacity') ): while ( have_rows('capacity') ) : the_row();  
-                                        ?>
-
-                                <label for="tab"><?php echo get_sub_field('litres');?></label> 
-                                <?php 
-                                        endwhile; endif;
-
-                                    endwhile; endif;    ?>
-
-
-                                <?php 
-                                    if( have_rows('our_products') ): while ( have_rows('our_products') ) : the_row();  ?>
-                                            
-                                    <?php 
-                                        if( have_rows('capacity') ): while ( have_rows('capacity') ) : the_row();  
-                                        ?>
-                                        
-                                        
-                                        
-                                        <div class="tab-panels">
-                                            <section class="tab-panel">
-                                            <h3><?php echo get_sub_field('product_description'); ?></h3>
-                                            <a href="<?php echo get_sub_field('link_1');?>"><button class="read-more m-r-20"><?php echo get_sub_field('link_text_1'); ?></button></a>
-                                            <a href="<?php echo get_sub_field('link_2');?>"><button class="read-more2"><?php echo get_sub_field('link_text_2'); ?></button></a>
-                                            </section>
-                                        </div>
-                                        
-
-                                    <?php 
-                                        endwhile; endif;
-
-                                    endwhile; endif;    ?>
-                            </div> 
+                              <!-- Tab 1 -->
+                                <input type="radio" name="tabset" id="tab1" >
+                              <label for="tab1">450 L</label>
+                              <!-- Tab 2 -->
+                              <input type="radio" name="tabset" id="tab2" >
+                              <label for="tab2">500 L</label>
+                              <!-- Tab 3 -->
+                              <input type="radio" name="tabset" id="tab3">
+                              <label for="tab3">1000 L</label>
+                              
+                              <div class="tab-panels">
+                                <section id="marzen" class="tab-panel">
+                                  <h3>450 L ENTATTI WATER TANK</h3>
+                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
+                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
+                                </section>
+                                <section id="rauchbier" class="tab-panel">
+                                  <h3>500 L ENTATTI WATER TANK</h3>
+                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
+                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
+                                </section>
+                                <section id="dunkles" class="tab-panel">
+                                  <h3>1000 L ENTATTI WATER TANK</h3>
+                                  <a href="products.html"><button class="read-more m-r-20">Know More</button></a>
+                                  <a href="contact.html"><button class="read-more2">Get a Quote</button></a>
+                                </section>
+                              </div>
+                            </div>
                         </div>
-                         <!-- tab - end -->
-
-                        
-                    <div>
+                        <!-- tab - end -->
+                    </div>
                 </div>
-
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="pdt-img">
-                        <?php 
+                    <?php 
                         $image=$products['image'];
                         if( $image ): ?>
                             <img src="<?php echo $image; ?>" width="100%" />
                         <?php endif; ?>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- OUR PRODUCTS END -->
+
+
+
 
 
    
